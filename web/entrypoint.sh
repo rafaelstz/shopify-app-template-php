@@ -10,6 +10,10 @@ cd /app
 echo "Running database migrations..."
 php artisan migrate --force
 
+echo "Running Laravel Optimizations..."
+php artisan optimize:clear
+php artisan optimize
+
 echo "Starting nginx server..."
 openrc
 touch /run/openrc/softlevel
